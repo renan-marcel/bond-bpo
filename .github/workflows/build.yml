@@ -26,7 +26,7 @@ jobs:
           9.0.x
 
     - name: Install GitVersion
-      uses: gitversion/setup@3
+      uses: gittools/actions/gitversion/setup@3
       with:
         versionSpec: "5.x"
 
