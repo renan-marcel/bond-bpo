@@ -30,5 +30,13 @@ jobs:
       with:
         versionSpec: '6.0.0'
 
+    - name: Determine Version
+      id: version_step # step id used as a reference for output values
+      uses: gittools/actions/gitversion/execute@v3.2.1
+
+    - name: Version
+      run: |
+        echo Building ${{ steps.gitversion.outputs.SemVer }}
+
     - name: Checkout code
       uses: actions/checkout@v4
