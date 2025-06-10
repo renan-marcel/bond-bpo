@@ -26,13 +26,13 @@ jobs:
           9.0.x
 
     - name: Install GitVersion
-      uses: gittools/actions/gitversion/setup@v3.2.1
+      uses: gittools/actions/gitversion/setup@v0.10.2
       with:
-        versionSpec: '6.0.0'
+        versionSpec: "5.x"
 
     - name: Determine Version
       id: version_step # step id used as a reference for output values
-      uses: gittools/actions/gitversion/execute@v3.2.1
+      uses: gittools/actions/gitversion/execute@v0.10.2
 
     - name: Version
       run: |
