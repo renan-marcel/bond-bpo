@@ -1,0 +1,28 @@
+assembly-versioning-scheme: MajorMinorPatch
+mode: Mainline
+branches:
+  main:
+    mode: ContinuousDelivery
+    regex: ^main$
+    increment: Minor
+    track-merge-target: false
+    prevent-increment-of-merged-branch-version: true
+    is-mainline: true
+  feature:
+    mode: ContinuousDelivery
+    regex: ^feature(s)?[/-]
+    increment: Minor
+    source-branches: ['develop']
+  hotfix:
+    mode: ContinuousDelivery
+    regex: ^hotfix(es)?[/-]
+    increment: Patch
+    source-branches: ['main']
+  release:
+    mode: ContinuousDelivery
+    regex: ^releases?[/-]
+    increment: None
+    source-branches: ['main']
+ignore:
+  sha: []
+merge-message-formats: {}
