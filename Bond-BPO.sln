@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution itens", "solution itens", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10110371-FD43-40DE-AAF5-E2FF6AAB0CB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{A4E53892-B4E5-40FB-BAA0-4A8886E24793}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0A5AA707-FDBC-40B3-BD3B-2FD4B11EA8E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0BC48E61-503B-4443-96CE-85094E56A4C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{D799F0CE-89BC-4028-B060-879505D5BA1E}"
+	ProjectSection(SolutionItems) = preProject
+		build.yml = build.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4E53892-B4E5-40FB-BAA0-4A8886E24793} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0A5AA707-FDBC-40B3-BD3B-2FD4B11EA8E7} = {A4E53892-B4E5-40FB-BAA0-4A8886E24793}
+		{0BC48E61-503B-4443-96CE-85094E56A4C1} = {0A5AA707-FDBC-40B3-BD3B-2FD4B11EA8E7}
+		{D799F0CE-89BC-4028-B060-879505D5BA1E} = {0BC48E61-503B-4443-96CE-85094E56A4C1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {901675B0-743E-4C41-93B8-75FC67B99D5F}
+	EndGlobalSection
+EndGlobal

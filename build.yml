@@ -1,0 +1,34 @@
+name: .NET Build
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+  workflow_dispatch:
+    inputs:
+      input:
+        description: "Bond services to build"
+        required: false
+        default: "Bond"
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+
+    steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: | 
+          8.x
+          9.0.x
+
+    - name: Install GitVersion
+      uses: gitversion/setup@3
+      with:
+        versionSpec: "5.x"
+
+    - name: Checkout code
+      uses: actions/checkout@v4
