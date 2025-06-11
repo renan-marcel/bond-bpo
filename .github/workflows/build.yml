@@ -21,22 +21,38 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: | 
-          8.x
-          9.0.x
+        dotnet-version: 9.0.x
 
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v0.10.2
       with:
         versionSpec: "5.x"
 
-    - name: Determine Version
-      id: version_step # step id used as a reference for output values
-      uses: gittools/actions/gitversion/execute@v0.10.2
-
-    - name: Version
-      run: |
-        echo Building ${{ steps.gitversion.outputs.SemVer }}
-
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Determine Version
+      id: gitversion
+      uses: gittools/actions/gitversion/execute@v0.10.2
+      with:
+        useConfigFile: true
+        configFilePath: ./GitVersion.yml
+ 
+
+
+        
+    # - name: Install GitVersion
+    #   uses: gittools/actions/gitversion/setup@v0.10.2
+    #   with:
+    #     versionSpec: "5.x"
+
+    # - name: Checkout code
+    #   uses: actions/checkout@v4
+
+    # - name: Determine Version
+    #   id: gitversion
+    #   uses: gittools/actions/gitversion/execute@v0.10.2
+    #   with:
+    #     useConfigFile: true
+    #     configFilePath: ./GitVersion.yml
+ 

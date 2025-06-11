@@ -3,26 +3,13 @@ mode: Mainline
 branches:
   main:
     mode: ContinuousDelivery
-    regex: ^main$
-    increment: Minor
-    track-merge-target: false
-    prevent-increment-of-merged-branch-version: true
-    is-mainline: true
+    tag: ""
+  develop:
+    mode: ContinuousDeployment
+    tag: "dev"
   feature:
-    mode: ContinuousDelivery
-    regex: ^feature(s)?[/-]
-    increment: Minor
-    source-branches: ['develop']
-  hotfix:
-    mode: ContinuousDelivery
-    regex: ^hotfix(es)?[/-]
-    increment: Patch
-    source-branches: ['main']
-  release:
-    mode: ContinuousDelivery
-    regex: ^releases?[/-]
-    increment: None
-    source-branches: ['main']
+    regex: feature(s)?[/-]
+    mode: ContinuousDeployment
+    tag: "{BranchName}"
 ignore:
   sha: []
-merge-message-formats: {}
